@@ -1,0 +1,15 @@
+name: B
+
+on:
+  workflow_run:
+    workflows: ["A"]
+    types:
+      - completed
+
+jobs:
+  say-world:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say world
+        run: echo "🌍 Hello from B!"
