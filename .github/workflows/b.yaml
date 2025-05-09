@@ -1,8 +1,8 @@
-name: B
+name: Release
 
 on:
   workflow_run:
-    workflows: ["A"]
+    workflows: ["Build"]
     types:
       - completed
 
