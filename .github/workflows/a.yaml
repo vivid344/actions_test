@@ -2,8 +2,8 @@ name: A
 
 on:
   push:
-    branches:
-      - main
+    tags-ignore:
+      - "release/*"
 
 jobs:
   say-hello:
